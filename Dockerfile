@@ -13,8 +13,8 @@ RUN apk -U add \
         libressl-dev \
         soxr-dev \
         avahi-dev \
-        libconfig-dev \
-    && cd /root \
+        libconfig-dev
+RUN cd /root \
     && git clone https://github.com/mikebrady/shairport-sync.git \
     && cd shairport-sync \
     && autoreconf -i -f \
