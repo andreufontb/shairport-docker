@@ -24,7 +24,6 @@ RUN apk -U add \
         --with-avahi \
         --with-ssl=openssl \
         --with-soxr \
-        --with-metadata \
     && make \
     && make install \
     && cd /
