@@ -10,7 +10,16 @@ services:
     #volumes:
     #  - ./shairport-sync.conf:/usr/local/etc/shairport-sync.conf
     #network_mode: host
-    network_mode: bridge
+    #network_mode: bridge
+    # ports:
+    #   - 5000:5000/tcp
+    #   - 6001-6011:6001-6011/udp
     ports:
-      - 5000:5000/tcp
-      - 6001-6011:6001-6011/udp
+      - target: 5000
+        published: 5000
+        protocol: tcp
+        mode: host
+      - target: 6001-6011
+        published: 6001-6011
+        protocol: udp
+        mode: host
