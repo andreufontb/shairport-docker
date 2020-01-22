@@ -1,0 +1,16 @@
+version: "3"
+services:
+  airplay:
+    build: ./
+    restart: unless-stopped
+    environment: 
+      - AIRPLAY_NAME=Docker
+    devices:
+      - /dev/snd
+    #volumes:
+    #  - ./shairport-sync.conf:/usr/local/etc/shairport-sync.conf
+    #network_mode: host
+    network_mode: bridge
+    ports:
+      - 5000:5000/tcp
+      - 6001-6011:6001-6011/udp
